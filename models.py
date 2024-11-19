@@ -35,9 +35,9 @@ class ContrastiveModel(keras.Model):
         self.probe_accuracy = keras.metrics.SparseCategoricalAccuracy()
 
     def reset_metrics(self):
-        self.contrastive_accuracy.reset_states()
-        self.correlation_accuracy.reset_states()
-        self.probe_accuracy.reset_states()
+        self.contrastive_accuracy.reset_state()
+        self.correlation_accuracy.reset_state()
+        self.probe_accuracy.reset_state()
 
     def update_contrastive_accuracy(self, features_1, features_2):
         # self-supervised metric inspired by the SimCLR loss
